@@ -1,0 +1,40 @@
+#filter {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+#filter section {
+  display: flex;
+}
+#filter section .filter-area {
+  text-align: center;
+  width: 6em;
+  color: #707070;
+  border-radius: 0.4em;
+  padding: 0.4em;
+}
+#filter section .filter-area h6 {
+  font-weight: normal;
+}
+#filter section .filter-area.active {
+  color: white;
+  background-color: #59914C;
+  padding: auto 0;
+  margin: 0 0.2em;
+}
+#filter section .filter-area.active h6 {
+  font-weight: 600;
+}
+#filter section .filter-area.active h6:hover {
+  color: white;
+}
+#filter section .filter-area:hover {
+  color: #57804f;
+  padding: auto 0;
+  margin: 0 0.2em;
+}
+#filter section .filter-area:hover h6 {
+  font-weight: 600;
+}/*# sourceMappingURL=filter.css.map */

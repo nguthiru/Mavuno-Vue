@@ -1,0 +1,118 @@
+{
+    "bids": [
+        {
+            "id":1,
+            "name": "Good Harvest",
+            "price": "60",
+            "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "status": "Pending"
+
+        },
+        {
+            "id":2,
+            "name": "Afraha Farm",
+            "price": "70",
+            "image": "https://images.pexels.com/photos/533342/pexels-photo-533342.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "status": "Accepted"
+
+        },
+        {
+            "id":3,
+            "name": "Good Harvest",
+            "price": "50",
+            "image": "https://images.pexels.com/photos/144206/pexels-photo-144206.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "status": "Rejected"
+
+        },
+        {
+            "id":4,
+            "name": "Gentle Brooks",
+            "price": "40",
+            "image": "https://images.pexels.com/photos/66296/gooseberry-autumn-garden-66296.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "status": "Accepted"
+
+        },
+        {
+            "id":5,
+            "name": "Mavuno Jaduong",
+            "price": "70",
+            "image": "https://images.pexels.com/photos/4110458/pexels-photo-4110458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+            "status": "Pending"
+
+        }
+    ],
+
+    "produce":[
+        {
+        "id":4,
+        "price": "40",
+        "product":
+            {"name":"Onions","color":" #473442"},
+
+        
+        "location":"Nanyuki",
+        "farm":"Good Harvest",
+        "weight": 7666,
+        "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        },
+        {
+        "id":1,
+        "price": "40",
+
+        "product":
+            {"name":"Onions","color":" #473442"},
+
+        
+        "location":"Nanyuki",
+        "farm":"Good Harvest",
+        "weight": 7666,
+
+        "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        },
+        {
+        "id":2,
+        "price": "40",
+
+        "product":
+            {"name":"Onions","color":" #473442"},
+
+        
+        "location":"Nanyuki",
+        "farm":"Good Harvest",
+        "weight": 7666,
+
+        "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        },
+        {
+        "id":3,
+        "price": "40",
+
+        "product":
+            {"name":"Onions","color":" #473442"},
+
+        
+        "location":"Nanyuki",
+        "farm":"Good Harvest",
+        "weight": 7666,
+
+        "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        },
+        {
+        "id":5,
+        "price": "40",
+
+        "product":
+            {"name":"Onions","color":" #473442"},
+
+        
+        "location":"Nanyuki",
+        "farm":"Good Harvest",
+        "weight": 7666,
+
+        "image": "https://images.pexels.com/photos/7889980/pexels-photo-7889980.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        }
+
+]
+
+}
+    
