@@ -1,11 +1,11 @@
 <template>
 
-<div id="filter">
+<div class="filter">
     <h5>{{heading}}</h5>
 
     <section>
 
-    <div :class="(item===active)?'active':'inactive'" class="filter-area" v-for="item in items" :key="item">
+    <div :class="(item===active)?'active':'inactive'" class="filter-area" v-for="item in items" :key="item" >
         <h6  @click="filter(item)" style="cursor:pointer;" > {{item}} </h6>
 
     </div>
@@ -15,9 +15,10 @@
 </template>
 
 <script>
+
 export default {
 
-    props:['items','heading'],
+    props:['items','heading','method'],
     name: 'filter',
     data(){
         return {
@@ -27,7 +28,8 @@ export default {
 
     methods:{
         filter: function(item) {
-            console.log(this.active)
+           
+            this.$emit('created',item);
             this.active = item
         }
     }

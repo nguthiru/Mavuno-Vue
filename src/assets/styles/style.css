@@ -1,10 +1,5 @@
 #searchbar {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  justify-items: center;
-  margin: 0.4em 0;
+  margin: 1.2em 0;
 }
 #searchbar input {
   display: flex;
@@ -21,7 +16,7 @@
   outline: none;
 }
 #searchbar input:focus {
-  border: 2px solid #59914C;
+  border: none;
 }
 #searchbar input:focus::-moz-placeholder {
   color: #59914C;
@@ -52,45 +47,126 @@
   width: 1.2em;
 }
 
-#filter {
+.filter {
   display: flex;
   align-items: center;
   margin-right: 5%;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
 }
-#filter section {
+.filter section {
   display: flex;
 }
-#filter section .filter-area {
+.filter section .filter-area {
   text-align: center;
   width: 6em;
   color: #5a5a5a;
-  border-radius: 0.4em;
   padding: 0.4em;
 }
-#filter section .filter-area h6 {
+.filter section .filter-area h6 {
   font-weight: normal;
 }
-#filter section .filter-area.active {
+.filter section .filter-area.active {
   color: white;
   background-color: #59914C;
   padding: auto 0;
-  margin: 0 0.2em;
+  border-radius: 0.4em;
 }
-#filter section .filter-area.active h6 {
+.filter section .filter-area.active h6 {
   font-weight: 600;
 }
-#filter section .filter-area.active h6:hover {
+.filter section .filter-area.active h6:hover {
   color: white;
 }
-#filter section .filter-area:hover {
+.filter section .filter-area:hover {
   color: #57804f;
   padding: auto 0;
   margin: 0 0.2em;
 }
-#filter section .filter-area:hover h6 {
+.filter section .filter-area:hover h6 {
   font-weight: 600;
+}
+
+.Pending {
+  color: #cd8e48;
+}
+
+.Accepted {
+  color: #59914C;
+}
+
+.Rejected {
+  color: #c24f4f;
+}
+
+#bids-main {
+  padding-top: 2.7em;
+}
+#bids-main #bid-main-title h6 {
+  color: #5a5a5a;
+}
+#bids-main #bid-searchbar {
+  width: 70%;
+}
+#bids-main #bid-container {
+  position: relative;
+  padding: 0.2em 0.4em;
+  width: 14em;
+  height: 8.2em;
+  background-color: white;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+#bids-main #bid-container:hover {
+  background-color: #f7f7f7;
+}
+#bids-main #bid-container #bid-farm-details {
+  display: flex;
+  align-items: center;
+}
+#bids-main #bid-container #bid-farm-details img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+#bids-main #bid-container #bid-farm-details #bid-produce-farm {
+  width: 100%;
+  margin-left: 0.4em;
+}
+#bids-main #bid-container #bid-farm-details #bid-produce-farm h5 {
+  font-weight: 600;
+}
+#bids-main #bid-container #bid-farm-details #bid-produce-farm #bid-farm-product-name {
+  display: flex;
+  justify-content: space-between;
+}
+#bids-main #bid-container #bid-farm-details #bid-produce-farm #bid-farm-product-name h6 {
+  font-weight: 600;
+}
+#bids-main #bid-container #bid-farm-details #bid-produce-farm #bid-farm-product-name .location-name {
+  font-weight: 600;
+  color: #cd8e48;
+}
+#bids-main #bid-container #bid-bid-details #bid-title-date {
+  margin-top: 0.4em;
+  display: flex;
+  color: #5a5a5a;
+}
+#bids-main #bid-container #bid-bid-details #bid-price-weight {
+  margin-top: 0.2em;
+  display: flex;
+  justify-content: space-between;
+}
+#bids-main #bid-container #bid-bid-details #bid-price-weight h4 {
+  font-weight: 600;
+}
+#bids-main #bid-container #bid-status {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 * {
@@ -103,28 +179,33 @@ body {
   background-color: #F2F2F2;
   padding: 0 0.8em;
   font-family: "Montserrat", sans-serif;
+  color: #1f1f1f;
 }
 
 #app {
-  display: grid;
-  grid-template-columns: 10% 3% 3fr 20%;
-  grid-template-rows: 5vh 95vh;
-  overflow: visible;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #59914C;
+  font-weight: 600;
+  font-size: 0.9em;
 }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2em;
 }
 
 h4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1em;
   font-weight: 600;
 }
 
 h5 {
-  font-family: "Montserrat" sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.9em;
 }
 
@@ -200,24 +281,46 @@ ul {
 }
 
 #sidebar {
+  position: -webkit-sticky;
   position: sticky;
   z-index: 1;
   top: 0;
   left: 0;
-  height: 100%;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  height: 100vh;
   display: flex;
+  margin-right: 3%;
+  justify-content: center;
   flex-direction: column;
 }
 #sidebar #logo {
   margin-bottom: auto;
+  margin-top: 1%;
 }
 #sidebar #logo img {
+  margin: 0 auto;
   height: 1.6em;
   width: 5em;
+}
+#sidebar #user-data-image {
+  display: flex;
+}
+#sidebar #user-data-image img {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+}
+#sidebar #user-data-image #user-data {
+  margin: 0 0.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#sidebar #user-data-image #user-data #user-data-email {
+  color: #5a5a5a;
+  font-weight: normal;
+}
+#sidebar #user-data-image #user-data #usertype {
+  font-weight: 500;
 }
 #sidebar a {
   padding: 1em 1em;
@@ -278,6 +381,8 @@ main {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
+  margin-top: 0.5em;
+  flex: 4;
   display: flex;
   flex-direction: column;
 }
@@ -316,41 +421,72 @@ main #links ul .list-item .active::after {
 }
 
 #summary {
+  position: -webkit-sticky;
   position: sticky;
-  z-index: 1;
   top: 0;
   right: 0;
-  height: 100%;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  height: 100vh;
+  flex: 1;
   display: flex;
+  overflow: auto;
+  scroll-behavior: smooth;
   flex-direction: column;
 }
-#summary .avatar {
+#summary ::-webkit-scrollbar {
+  display: none;
+}
+#summary #header {
+  display: flex;
+  align-items: center;
+}
+#summary #header .avatar {
   align-self: center;
-  margin: 1em 0;
-  height: 5em;
-  width: 5em;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  height: 2em;
+  width: 2em;
   border-radius: 50%;
+}
+#summary #header i {
+  font-size: 1.4em;
+}
+#summary #heading {
+  margin: 1.2em 0;
+}
+#summary #heading h4 {
+  font-weight: bold;
+}
+#summary #heading h6 {
+  margin: 0.6em 0;
+  font-weight: normal;
+  color: #5a5a5a;
+}
+#summary .filter .filter-area {
+  justify-content: space-between;
+  width: auto;
+}
+#summary .filter .filter-area.active {
+  border: initial;
+  border-radius: initial;
+  background-color: initial;
+  color: #59914C;
+}
+#summary .filter .filter-area.active:hover {
+  color: #59914C;
 }
 #summary .button {
   margin-top: auto;
 }
 #summary #details {
-  display: flex;
-  margin: 0.4em auto;
-  justify-items: center;
+  align-self: center;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
-#summary #details .detail {
-  margin: 0 0.2em;
-  display: flex;
-}
-#summary #details .detail object {
-  height: 0.8em;
-  width: 0.8em;
-  margin-right: 0.2em;
+#summary #details h5 {
+  font-weight: normal;
+  font-size: 0.7em;
+  color: #5a5a5a;
 }
 #summary #bids {
   display: flex;
@@ -360,60 +496,58 @@ main #links ul .list-item .active::after {
 }
 #summary #bids .bid-card {
   cursor: pointer;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-between;
   width: 100%;
   height: 3em;
   border-radius: 0.6em;
-  padding: 0.4em 0.8em;
+  padding: 0.2em 0.4em;
   margin: 0.6em 0em;
 }
-#summary #bids .bid-card img {
+#summary #bids .bid-card #bid-card-image-farm-name {
+  display: flex;
+}
+#summary #bids .bid-card #bid-card-image-farm-name img {
   height: 2.5em;
   width: 2.5em;
   border-radius: 50%;
 }
 #summary #bids .bid-card #bid-card-details {
-  flex: 2;
-  padding: 0 0.5em;
+  margin: 0 0.5em;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-content: space-around;
 }
-#summary #bids .bid-card #bid-card-details h5 {
-  color: #5a5a5a;
+#summary #bids .bid-card #bid-card-details #bid-card-name {
+  color: #1f1f1f;
+  font-weight: 600;
 }
-#summary .pending {
+#summary #bids .bid-card #bid-card-details #bid-status-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#summary #bids .bid-card #bid-card-details #bid-status-price .price {
+  align-self: flex-start;
+}
+#summary .Pending {
   background-color: rgba(205, 142, 72, 0.05);
   color: #cd8e48;
 }
-#summary .pending:hover {
+#summary .Pending:hover {
   background-color: rgba(205, 142, 72, 0.4);
 }
-#summary .pending:hover h5 {
-  color: black;
-}
-#summary .accepted {
+#summary .Accepted {
   background-color: rgba(89, 145, 76, 0.05);
   color: #59914C;
 }
-#summary .accepted:hover {
+#summary .Accepted:hover {
   background-color: rgba(89, 145, 76, 0.2);
 }
-#summary .accepted:hover h5 {
-  color: black;
+#summary .Rejected {
+  background-color: rgba(194, 79, 79, 0.02);
+  color: #c24f4f;
 }
-#summary .rejected {
-  background-color: rgba(255, 0, 0, 0.02);
-  color: red;
-}
-#summary .rejected:hover {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-#summary .rejected:hover h5 {
-  color: black;
+#summary .Rejected:hover {
+  background-color: rgba(194, 79, 79, 0.2);
 }
 
 .produce-card {
@@ -425,6 +559,7 @@ main #links ul .list-item .active::after {
   grid-template-rows: 10em 8em;
   border-radius: 10% 10% 5% 5%;
   flex-direction: column;
+  justify-content: space-between;
   background-color: white;
   padding-bottom: 0.8em;
 }
@@ -441,13 +576,14 @@ main #links ul .list-item .active::after {
 .produce-card .card-details {
   padding: 0 0.6em;
   grid-row-start: 2;
-  grid-row-end: span 2;
+  grid-row-end: 3;
   display: flex;
   flex-direction: column;
 }
 
 .sub-content {
   padding-right: 3%;
+  margin-top: 0.4em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -481,12 +617,17 @@ main #links ul .list-item .active::after {
 #produce #produce-info .icons-details img {
   height: 1.2em;
   width: 1.2em;
+  margin-right: 0.3em;
+}
+#produce #produce-info .icons-details i {
+  font-size: 1em;
+  margin-right: 0.3em;
 }
 #produce #farm-produce {
   display: block;
 }
 #produce #farm-produce h4 {
-  padding: 0.3em 0;
+  padding: 0.1em 0;
 }
 #produce #farm-produce #farm {
   font-weight: 600;
@@ -499,6 +640,14 @@ main #links ul .list-item .active::after {
   font-weight: normal;
   font-size: 0.8em;
   color: grey;
+  display: block;
+  /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  max-lines: 4;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.2em;
 }
 
 #farm-items {
@@ -548,4 +697,126 @@ main #links ul .list-item .active::after {
 .intro-card .intro-image img {
   height: 6em;
   width: 6em;
+}
+
+#auth {
+  display: grid;
+  grid-template-columns: 50vw 45vw;
+}
+#auth .auth-section {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding: 0 2em;
+}
+#auth .auth-section .auth-intro-text {
+  padding-left: 0.8em;
+  padding-top: 0.6em;
+}
+#auth .auth-section .auth-intro-text h4 {
+  margin-bottom: 0.6em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#auth .auth-section .auth-intro-text h5 {
+  font-size: 1em;
+}
+#auth .auth-section .input-auth {
+  padding-left: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#auth .auth-section .input-auth .input-wrapper {
+  margin-top: 1.8em;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+#auth .auth-section .input-auth .input-wrapper i {
+  position: absolute;
+  color: #cd8e48;
+  left: 15px;
+  top: 10px;
+}
+#auth .auth-section .input-auth .input-wrapper input {
+  width: 100%;
+  background-color: white;
+  outline: none;
+  padding: 1em 1.2em;
+  border-radius: 10px;
+  border: none;
+}
+#auth .auth-section .input-auth .input-wrapper input::-moz-placeholder {
+  color: #cd8e48;
+  font-weight: 500;
+}
+#auth .auth-section .input-auth .input-wrapper input:-ms-input-placeholder {
+  color: #cd8e48;
+  font-weight: 500;
+}
+#auth .auth-section .input-auth .input-wrapper input::placeholder {
+  color: #cd8e48;
+  font-weight: 500;
+}
+#auth .auth-section .input-auth .input-wrapper input::-moz-placeholder::before {
+  content: "&#xF002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #cd8e48;
+}
+#auth .auth-section .input-auth .input-wrapper input:-ms-input-placeholder::before {
+  content: "&#xF002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #cd8e48;
+}
+#auth .auth-section .input-auth .input-wrapper input::placeholder::before {
+  content: "&#xF002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #cd8e48;
+}
+#auth .auth-section .button {
+  margin-top: 1.8em;
+  text-align: center;
+}
+#auth .auth-section .button i {
+  font-weight: 1.2em;
+}
+#auth .auth-section #password-links {
+  padding-left: 0.8em;
+  padding-top: 1.2em;
+}
+#auth .auth-section #password-links h5 {
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  color: #5a5a5a;
+}
+#auth .auth-section #password-links h5 a {
+  cursor: pointer;
+  color: #59914C;
+}
+#auth .auth-links {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+#auth .auth-links img {
+  height: 2em;
+  width: 6em;
+}
+#auth .auth-links .auth-link {
+  color: #59914C;
+  font-weight: 500;
+}
+#auth .svg-section {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#auth .svg-section img {
+  opacity: 0.2;
 }/*# sourceMappingURL=style.css.map */

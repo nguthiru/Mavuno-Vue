@@ -3,30 +3,24 @@ import App from './App.vue'
 
 import './assets/styles/style.css'
 import router from './router'
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
-import { createApolloProvider } from '@vue/apollo-option'
-// HTTP connection to the API
-const httpLink = createHttpLink({
-  // You should use an absolute URL here
-  uri: 'http://127.0.0.1:8000/graphql/',
-})
+import { store } from './store/store'
 
-// Cache implementation
-const cache = new InMemoryCache()
+import axios from 'axios';
 
-// Create the apollo client
-const apolloClient = new ApolloClient({
-  link: httpLink,
-  cache:cache,
-  connectToDevTools: true,
-})
+function getToken(){
+  let token = localStorage.getItem('token');
 
-const apolloProvider = new createApolloProvider({
-    defaultClient: apolloClient,
-  })
+  return `Token ${token}`;
+}
+const base = axios.create({
+  baseURL: 'http://127.0.0.1:8000/'
+});
+base.defaults.headers.common['Authorization'] = getToken() ;
 
+export default base;
 const app = createApp(App);
-app.use(apolloProvider);
+
 
 app.use(router);
+app.use(store);
 app.mount('#app');

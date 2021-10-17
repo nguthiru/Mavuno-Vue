@@ -7,7 +7,7 @@
 
     <section class ="sub-content">
 
-    <ItemCard v-for="item in items" :data="item" :key="item.node.id"/>
+    <ItemCard v-for="item in items" :data="item" :key="item.id"/>
         
 
 </section>
@@ -20,34 +20,7 @@
 import Filter from '../shared/filter.vue';
 import SearchBar from '../shared/searchbar.vue'
 import ItemCard from './components/item_card.vue'
-import {gql} from 'graphql-tag'
-
-
-const GET_ITEMS = gql`
-query items{
-items{
-  edges{
-    node{
-      name
-      id
-      agrovet{
-        name
-        id
-      }
-      description
-      price
-      itemImages{
-        image
-      }
-      
-      
-    }
-  }
-}
-}
-
-
-`
+import base from '../../main';
 export default {
     name:'Farm Items',
     components:{
@@ -66,14 +39,12 @@ export default {
             ]
         }
     },
-    apollo: {
-        items: {
-            query: GET_ITEMS,
-            update: data => data.items.edges
-        },
 
-        
-    },
+
+    async created(){
+      const response = await base.get("customers/farm-items/");
+      this.items = response.data;
+    }
     
 }
 

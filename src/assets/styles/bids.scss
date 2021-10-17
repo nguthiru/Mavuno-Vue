@@ -1,0 +1,103 @@
+@import './variables.scss';
+
+
+.Pending{
+    color: $accent-color;
+}
+.Accepted{
+    color: $primary-color;
+}
+.Rejected{
+    color: $red-color;
+}
+#bids-main{
+    padding-top: 2.7em;
+    #bid-main-title{
+        h6{
+            color: $inactive-color;
+        }
+    }
+    #bid-searchbar{
+        width: 70%;
+    }
+
+    #bid-container{
+        position: relative;
+        padding: 0.2em 0.4em;
+        width: 14em;
+        height:8.2em;
+        background-color: white;
+        border-radius: 10%;
+        display:flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $card-hover-color;
+        }
+
+        #bid-farm-details{
+            display: flex;
+            align-items: center;
+            img{
+                width: 2.5em;
+                height: 2.5em;
+                border-radius: 50%;
+            }
+            #bid-produce-farm{
+                width: 100%;
+                margin-left: 0.4em;
+                h5{
+                    font-weight: 600;
+                }
+                
+                #bid-farm-product-name{
+                    display: flex;
+                    justify-content: space-between;
+                    h6{
+                        font-weight: 600;
+                    }
+                    .location-name{
+                        font-weight: 600;
+                        color: $accent-color;
+                    }
+                }
+            
+                
+            }
+        }
+        
+
+        #bid-bid-details{
+            
+            #bid-title-date{
+                margin-top: 0.4em;
+
+                display:flex;
+                color: $inactive-color;
+               
+            }
+
+            #bid-price-weight{
+                margin-top: 0.2em;
+
+                display: flex;
+                justify-content: space-between;
+
+                h4{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        #bid-status{
+            position: absolute;
+            bottom: 0;
+            left:0;
+            right: 0;
+        }
+        
+
+
+    }
+}

@@ -1,4 +1,5 @@
 <template>
+<SideBar/>
   <main>
     <div id="links">
       <ul>
@@ -20,13 +21,20 @@
     </div>
     <router-view />
   </main>
+  <Summary/>
+
 </template>
 
 <script>
-
+  import SideBar from '../components/navigation/sidebar.vue';
+  import Summary from '../components/Summary/summary.vue';
 export default {
+  
   name: "Home",
-
+  components:{
+  SideBar,Summary,
+  }
+  
 };
 </script>
 

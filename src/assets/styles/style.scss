@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './Home/searchbar.scss';
 @import './Home/filter.scss';
+@import './bids.scss';
 *{
     margin: 0;
     padding: 0;
@@ -10,29 +11,37 @@ body{
     background-color: $background-color;
     padding: 0 0.8em;
     font-family: 'Montserrat',sans-serif;
+    color: $black-text;
     
 
 }
 
 #app{
-    display: grid;
-    grid-template-columns: 10% 3% 3fr 20%;
-    grid-template-rows: 5vh 95vh;
-    overflow: visible;
+    display: flex;
+    // grid-template-columns: 10% 3% 3fr 20%;
+    // grid-template-rows: 5vh 95vh;
+    // overflow: visible;
 
 }
+a{
+    text-decoration: none;
+    color: $primary-color;
+
+    font-weight: 600;
+    font-size: 0.9em;
+}
 h3{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
 }
 h4{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.0em;
     font-weight: 600;
 }
 
 h5{
-    font-family: 'Montserrat' sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
 }
 
@@ -141,19 +150,40 @@ ul{
     z-index: 1; 
     top: 0; 
     left: 0;
-    height: 100%;
-
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    height: 100vh;
     display: flex;
+    margin-right: 3%;
+    justify-content: center;
     flex-direction: column;
     #logo{
         margin-bottom: auto ;
+        margin-top: 1%;
         img{
+            margin: 0 auto;
             height: 1.6em;
             width: 5em;
+        }
+    }
+
+    #user-data-image{
+        display: flex;
+        img{
+            height:3em;
+            width:3em;
+            border-radius: 50%;
+        }
+        #user-data{
+            margin:0 0.4em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            #user-data-email{
+                color:$inactive-color;
+                font-weight: normal;
+            }
+            #usertype{
+                font-weight: 500;
+            }
         }
     }
 
@@ -210,6 +240,7 @@ ul{
     #navigation{
         margin: auto 0;
         display: flex;
+        // flex: 2;
         flex-direction: column;
         // justify-content: space-between;
         
@@ -237,6 +268,8 @@ main{
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
+    margin-top: 0.5em;
+    flex:4;
     display: flex;
     flex-direction: column;
 
@@ -291,45 +324,85 @@ main{
 
 #summary{
     position: sticky;
-    z-index: 1; 
+    // z-index: 1; 
     top: 0; 
     right: 0;
-    height: 100%;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 4;
+    height: 100vh;
+    flex:1;
     display: flex;
-    flex-direction: column;
-
-    .avatar{
-        align-self: center;
-
-        margin:1em 0;
-        height: 5em;
-        width: 5em;
-        border-radius: 50%;
+    overflow: auto;
+    scroll-behavior: smooth;
+    ::-webkit-scrollbar{
+        display: none;
     }
+    flex-direction: column;
+    #header{
+        display: flex;
+        align-items: center;
+        .avatar{
+            align-self: center;
+            margin-top: 0.5em;
+            margin-left: 1em;
+    
+            
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+        }
+        i{
+            font-size: 1.4em;
+        }
+
+    }
+    #heading{
+        margin:1.2em 0;
+        h4{
+            font-weight: bold;
+        }
+        h6{
+            margin: 0.6em 0;
+            font-weight: normal;
+            color: $inactive-color;
+        }
+
+    }
+    .filter{
+        .filter-area{
+            justify-content: space-between;
+            width:auto;
+            &.active{
+                border: initial;
+                border-radius: initial;
+                background-color: initial;
+                color: $primary-color;
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+
+
     .button{
         margin-top: auto;
     }
 
     #details{
+        align-self: center;
+        text-align: center;
 
         
-        display: flex;
-        margin: 0.4em auto;
-        justify-items: center;
-        .detail{
-            margin: 0 0.2em;
-            display: flex;
-            object{
-                height:0.8em;
-                width: 0.8em;
-                margin-right: 0.2em;
-            }
+        display: block;
+        margin: 0 auto;
 
+        h5{
+            font-weight: normal;
+            font-size: 0.7em;
+            color: $inactive-color;
         }
+        
+        
     }
 
     #bids{
@@ -339,74 +412,88 @@ main{
         margin-top: 1em;
         .bid-card{
             cursor: pointer;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            align-content: space-between;
+            // display: flex;
+            // justify-content: space-around;
+            // align-items: center;
+            // align-content: space-between;
             width: 100%;
             height: 3em;
             border-radius: 0.6em;
-            padding: 0.4em 0.8em;
+            padding: 0.2em 0.4em;
             margin: 0.6em 0em;
-            img{
-                height: 2.5em;
-                width: 2.5em;
-                border-radius: 50%;
-    
+
+            #bid-card-image-farm-name{
+                display: flex;
+                img{
+                    height: 2.5em;
+                    width: 2.5em;
+                    border-radius: 50%;
+        
+                }
             }
             #bid-card-details{
-                flex:2;
-                padding:0  0.5em;
+                margin:0  0.5em;
+                width: 100%;
+
                 display: flex;
                 flex-direction: column;
-                align-content: space-around;
-                h5{
-                    color: $inactive-color;
+                // align-content: space-around;
+                #bid-card-name{
+                    color: $black-text;
+                    font-weight: 600;
+                    
+                }
+                #bid-status-price{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .price{
+                        align-self: flex-start;
+                    }
                 }
     
             }
     
         }
+    
     }
 
     
-    .pending{
+    .Pending{
         background-color: rgba($color: #CD8E48, $alpha: 0.05);
         color: $accent-color;
 
         &:hover{
             background-color: rgba($color: #CD8E48, $alpha: 0.4);
-            h5{
-                color: black;
-            }
+            // h5{
+            // }
 
 
         }
     }
-    .accepted{
+    .Accepted{
         background-color: rgba($color: $primary-color , $alpha: 0.05);
         color: $primary-color;
 
         &:hover{
             background-color: rgba($color: $primary-color , $alpha: 0.2);
-            h5{
-                color: black;
-            }
+            // h5{
+            //     color: black;
+            // }
 
 
         }
     }
-    .rejected{
-        background-color: rgba($color: red , $alpha: 0.02);
-        color: red;
+    .Rejected{
+        background-color: rgba($color: $red-color , $alpha: 0.02);
+        color: $red-color;
 
         &:hover{
-            background-color: rgba($color: red , $alpha: 0.2);
-            h5{
-                color: black;
-            }
-
-
+            background-color: rgba($color:$red-color , $alpha: 0.2);
+            // h5{
+            //     color: black;
+            // }
         }
     }
 
@@ -425,7 +512,7 @@ main{
     border-radius: 10% 10% 5% 5%;
     
     flex-direction: column;
-    // justify-content: space-between;
+    justify-content: space-between;
     background-color: white;
     padding-bottom: 0.8em;
     img{
@@ -441,7 +528,7 @@ main{
     .card-details{
         padding: 0 0.6em;
         grid-row-start: 2;
-        grid-row-end: span 2;
+        grid-row-end: 3;
         display: flex;
         flex-direction:column;
     }
@@ -450,6 +537,7 @@ main{
 
 .sub-content{
     padding-right: 3%;
+    margin-top: 0.4em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -480,6 +568,12 @@ main{
                 img{
                     height: 1.2em;
                     width: 1.2em;
+                    margin-right: 0.3em;
+
+                }
+                i{
+                    font-size: 1em;
+                    margin-right: 0.3em;
                 }
                 font-size: 0.9em;
                 color: $accent-color
@@ -492,7 +586,7 @@ main{
 
             display: block;
             h4{
-                padding: 0.3em 0;   
+                padding: 0.1em 0;   
             }
             #farm{
                 font-weight: 600;
@@ -501,6 +595,19 @@ main{
                 font-weight: 500;
             }
         }
+        // #link{
+        //     display: flex;
+        //     align-items: center;
+        //     margin: 0 auto;
+        //     color: $inactive-color
+        //     i{
+        //         font-size: 0.9em;
+        //     }
+        //     h6{
+        //         align-self: flex-end;
+        //     }
+
+        // }
 
         
 
@@ -510,6 +617,13 @@ main{
     font-weight: normal;
     font-size: 0.8em;
     color: grey;
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    max-lines: 4;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.2em;
 }
 #farm-items{
     column-gap: 10em;
@@ -569,4 +683,147 @@ main{
           }
         
       }
+}
+
+
+#auth{
+    display: grid;
+
+    grid-template-columns: 50vw 45vw;
+
+    .auth-section{
+
+
+        grid-column-start: 1;
+        grid-column-end: 2;
+        padding: 0 2em;
+
+        .auth-intro-text{
+            padding-left: 0.8em;
+            padding-top: 0.6em;
+            
+
+            h4{
+                margin-bottom: 0.6em;
+                font-weight: bold;
+                font-size: 1.2em;
+
+            }
+            h5{
+
+                font-size: 1em;
+            }
+        }
+
+        .input-auth{
+            padding-left: 0.8em;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .input-wrapper{
+                margin-top: 1.8em;
+                position: relative;
+                width: 100%;
+                display: inline-block;
+
+                i {
+                    position: absolute;
+                    color: $accent-color;
+                    
+                    left: 15px;
+                    top: 10px;
+                
+                }
+                input{
+                    width: 100%;
+                    background-color: white;
+                    outline: none;
+                    padding: 1em 1.2em;
+                    border-radius: 10px;
+                    border: none;
+                    // margin-bottom: 1.2em;
+
+                    &::placeholder{
+                        color: $accent-color;
+                        font-weight: 500;
+
+
+
+                        &::before{
+                            content: '&#xF002';
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            color: $accent-color;
+                        }
+                    }
+
+                }
+
+            }
+
+            
+        }
+
+    
+
+    .button{
+        margin-top: 1.8em;
+        text-align: center;
+        i{
+            font-weight: 1.2em;
+        }
+    }
+
+    #password-links{
+        padding-left: 0.8em;
+        padding-top: 1.2em;
+
+
+        h5{
+            font-weight: 600;
+            margin-bottom: 0.6em;
+            color: $inactive-color;
+
+            a{
+                cursor: pointer;
+                color: $primary-color;
+            }
+        }
+    }
+
+
+    }
+
+
+    .auth-links{
+        margin-top: 10vh;
+        display:flex;
+        justify-content: space-between;
+        img{
+            height: 2em;
+            width: 6em;
+        }
+        .auth-link{
+            color:$primary-color;
+            font-weight: 500;
+        }
+        
+    }
+
+    .svg-section{
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        img{
+            opacity: 0.2;
+        }
+
+    }
 }

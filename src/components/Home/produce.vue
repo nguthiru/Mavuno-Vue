@@ -1,29 +1,18 @@
 <template>
-<!-- <IntroCard>
-  <template v-slot:text>
-    <center><h4> Mavuno Produce</h4></center>
-    
-    <p> Find,Bid and connect with farmers through our platform </p>
-  </template>
 
-  <template v-slot:image>
-    <img src="../../assets/fruits.png">
-  </template>
+<Modal v-if="showModal" :data="activeModalData"/>
 
-</IntroCard> -->
 <SearchBar />
 
 <div id ="produce">
           
-<!-- <center><h3 class="title">Farm Produce</h3></center> -->
 
 <Filter :items="filter"/>,
 
 
 <section class ="sub-content">
 
-    <Card v-for="item in produce" :data="item" :key="item.node.id"/>
-        
+    <Card v-for="item in produce" :data="item" :key="item.id" @produce-click="produceDetail(item)"/>
 
 </section>
 </div>
@@ -32,40 +21,11 @@
 <script>
 import Filter from '../shared/filter.vue';
 import Card from './components/product_card.vue';
-import gql from 'graphql-tag';
 import SearchBar from "../shared/searchbar.vue";
+import base from '../../main';
+import Modal from '../modal.vue';
 // import IntroCard from "./components/intro_card.vue"
 
-
-const GET_PRODUCE = gql`
-query produce{
-produce{
-  edges{
-    node{
-      id
-      imageProduceRelation{
-        image
-      }
-      product{
-        productName
-        colorCode
-        svgIcon
-        
-      }
-      farm{
-        city
-        farmName
-
-      }
-      weightKgs
-      startingPrice
-      
-    }
-  }
-}
-}
-
-`;
 
 export default {
     name:'Produce Page',
@@ -73,28 +33,37 @@ export default {
         Filter,
         Card,
         SearchBar,
+        Modal,
         // IntroCard
     },
 
     data(){
         return {
-            produce: [],
+            produce: [
+
+            ],
             filter: [
-              'All','Onions','Potatoes','Cabbages','Peas','Pepper'
-                
-            
-                
-            ]
+              'All','Onions','Potatoes','Cabbages','Peas','Pepper'  
+            ],
+            showModal:false,
+            activeModalData: null
         }
     },
-    apollo: {
-        produce: {
-            query: GET_PRODUCE,
-            update: data => data.produce.edges
-        },
+    methods:{
+      produceDetail(item){
+        this.activeModalData = item;
+        this.showModal = true;
 
-        
+      },
+      
     },
+
+    async mounted(){
+      const response = await base.get("customers/produce/");
+      this.produce = response.data;
+      
+
+    }
 
 }
 </script>

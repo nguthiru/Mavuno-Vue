@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-#filter{
+.filter{
     display: flex;
     align-items: center;
     margin-right: 5%;
@@ -21,7 +21,6 @@
         text-align: center;
         width: 6em;
         color: $inactive-color;
-        border-radius: 0.4em;
         padding: 0.4em;
 
         h6{
@@ -33,7 +32,9 @@
             color: white;
             background-color: $primary-color;
             padding: auto 0;
-            margin: 0 0.2em;
+            // margin: 0 0.2em;
+            border-radius: 0.4em;
+
 
             h6{
                 font-weight: 600;

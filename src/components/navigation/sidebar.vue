@@ -1,8 +1,17 @@
 <template>
   <div id="sidebar">
     <section id="logo">
-        <img src = '../../assets/logo.png'>
+        <center><img src = '../../assets/logo.png'></center>
       </section>
+
+
+    <section id="user-data-image" v-if="farm">
+      <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg">
+      <div id = "user-data">
+        <center><h6 id="usertype"> {{usertype}}</h6></center>
+        <h6 id="user-data-email"> {{farm.farm_name}}</h6>
+      </div>
+    </section>
     <section id="navigation">
       
       <div class="side-links active">
@@ -51,9 +60,9 @@
     </section>
 
     <section id="refer">
-      <div class="side-links">
-        <router-link to="/points">
-        <object type="image/svg+xml" :data="require('../../assets/icons/shop.svg')"></object>
+      <div class="side-links" >
+        <router-link to="/points" style="color:#cd8e48">
+        <i class="fas fa-store"></i>
         <h5>Refer Business</h5>
         </router-link>
       </div>
@@ -62,8 +71,25 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex';
 export default {
   name: "Sidebar",
+
+  computed:{
+    ...mapGetters({
+      user: 'auth/user',
+      farm: 'auth/farm'
+    }),
+
+    usertype(){
+      if(this.user.usertype=='F'){
+        return 'Farmer';
+      }
+      return "Farmer";
+    }
+
+
+  }
 };
 </script>
 

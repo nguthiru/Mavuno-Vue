@@ -1,32 +1,35 @@
 <template>
-<div class="produce-card" :id="data.node.id">
-    <img :src="produce.imageProduceRelation[0].image">
+<div class="produce-card" :id="data.id" @click="handleClick">
+    <img :src="data.produce_images[0].image">
 
     <div class="card-details">
 
         <section id="produce-info">
         <div class="icons-details">
-            <img :src="produce.product.svgIcon">
-            <h6 id="product-name"> {{produce.product.productName}}</h6>
+            <img :src="data.product.svg_icon">
+            <h6 id="product-name"> {{data.product.product_name}}</h6>
         </div>
             <div class="icons-details">
-            <h6 id="location-name"> {{produce.farm.city}}</h6>
+            <i class="fas fa-map-marker-alt"></i>
+            <h6 class="location-name"> {{data.farm.city}}</h6>
         </div>
     </section>
 
     <section id="farm-produce">
-        <h4 id="farm">{{produce.farm.farmName}}</h4>
-        <h4 id="weight">{{produce.weightKgs}}<small>kgs</small></h4>
+        <h4 id="farm">{{data.farm.farm_name}}</h4>
+        <h4 id="weight">{{data.weight_kgs}}<small>kgs</small></h4>
     </section>
 
-    <div class = "price-card">
-        <h4 class="price">{{produce.startingPrice}}<small>per kg</small></h4>
-        <Button>
-            <h6>Bid</h6>
-        </Button>
+    <h4 class="price">{{data.starting_price}}<small>/=per kg</small></h4>
+    
+    
+    <!-- <div id="link">
+        <i class='fas fa-wallet'></i>
+        <h6> Place a Bid </h6>
+    </div> -->
 
 
-    </div>
+    
 
     </div>
 
@@ -38,7 +41,6 @@
 </template>
 
 <script>
-import Button from '../../shared/button.vue'
 
 export default {
     props: ['data'],
@@ -47,20 +49,15 @@ export default {
             produce:{}
         }
     },
-    // mounted(){
-    //     var name = document.getElementById('product_name');
-    //     name.style.color = this.produce['product']['colorCode'];
-    //     console.log(this.produce['product']['colorCode'])
-    // },
-    components: {
-        Button
+    methods:{
+        handleClick(){
+            this.$emit("produce-click")
+        }
     },
-    created(){
-        this.produce = this.$props.data.node
-       
 
-
-    }
+    components: {
+    },
+    
 
 
     

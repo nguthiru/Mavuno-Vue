@@ -1,29 +1,35 @@
 <template>
-<Header/>
 
-<SideBar/>
 
-<Summary/>
+
 
   <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
    <router-view/>
+   <Summary/>
 </template>
 
 <script>
-  import Header from './components/navigation/header.vue';
-  import SideBar from './components/navigation/sidebar.vue';
-  import Summary from './components/Summary/summary.vue';
-
+  
 
 
 export default {
   name: 'App',
-  components: {
-    Header,SideBar,Summary
-  }
+
+  created(){
+     
+      const token = localStorage.getItem('token');
+
+      if(token !=null){
+        this.$store.dispatch("auth/get_user",token);
+      }
+    }
+
+
+  
+  
 
 }
 </script>
