@@ -5,7 +5,7 @@ import Login from '../components/Auth/login.vue'
 import Bids from '../views/Bids.vue';
 import Produce from '../components/Home/produce.vue';
 import Farm_Items from '../components/Home/farm_items.vue';
-
+import ProduceDetail from '../components/Home/produce_detail.vue';
 const routes = [
   {
     path:'',
@@ -25,7 +25,8 @@ const routes = [
         
         path:'produce',
         component: Produce,
-        name:'produce'
+        name:'produce',
+        
       
       },
       {
@@ -35,6 +36,11 @@ const routes = [
       }
 
     ]
+  },
+  {
+    path:'/home/produce/:id',
+    name: 'produce_detail',
+    component: ProduceDetail,
   },
   {
     path: '/auth',

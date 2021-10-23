@@ -4,16 +4,18 @@
     <section class="card-details">
 
         <div id ="product-details" >
-            <h6 id="agrovet-name">{{data.shop.name}}</h6>
             <h4>{{data.name}}</h4>
             <p class="description" style="margin-top:0.2em">{{data.description}}</p>
         </div>
 
         <div class = "price-card">
-            <h4 class="price">{{data.price}}<small>/=</small></h4>
-            <Button>
-            <center> <img src="../../../assets/icons/cart2.svg" style="height:1.1em;width:1.1em;"></center>
-            </Button>
+            <h4 class="price">{{data.price}}</h4>
+        </div>
+
+        <div class="item-card-add-to-cart">
+            <i class= "fa fa-shopping-cart"></i>
+            <h6> Add To Cart</h6>
+            
         </div>
     </section>
 
@@ -22,20 +24,19 @@
 </template>
 
 <script>
-import Button from '../../shared/button.vue';
 export default {
     name: 'item-card',
-    components:{
-        Button
-    },
+    components:{},
     props:['data'],
 
 
-    created(){
+    methods: {
+        handleAddCart(){
+            this.$emit("addToCart")
+        }
+    },
 
-        console.log(this.$props.data)
-
-    }
+    
 
 }
 </script>

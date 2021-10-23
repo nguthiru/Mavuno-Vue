@@ -1,103 +1,56 @@
 <template>
   <div id="Mymodal" class="modal">
+      <div class="modal-header">
+        <div id="close-modal" @click = "closeModal">
+          <i class="fa fa-times"></i>
+
+        </div>
+         
+      </div>
       <div class="modal-body">
-      <Carousel :images="data.produce_images"/>
+          <div class="modal-image-body">
+              <img :src="data.produce_images[selectedImageIndex].image" class="main-modal-image">
+
+              <div id=modal-image-options>
+                  <img  v-for= "(image,index) in data.produce_images" :key="image.image" :src="image.image" :class="index==selectedImageIndex? 'active' :'' " alt="" class="caption-modal-image" @click="changePicture(index)">
+
+              </div>
+          </div>
+
+          <div class="modal-product-details">
+            
+          </div>
     </div>
 
   </div>
 </template>
 
 <script>
-import Carousel from './carousel.vue'
 export default {
-  components: { Carousel },
+  components: {  },
     props:['data'],
+    data(){
+        return{
+            selectedImageIndex:0
+        }
+    },
+    methods:{
+        changePicture(index){
+            this.selectedImageIndex = index;
+        },
+        closeModal(){
+          this.$emit("CLOSE_MODAL");
+        }
+    },
 
     created(){
+        console.log(this.$props.data)
     }
 
 }
 </script>
 
 <style scoped>
-.modal {
-  /* display: none; Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  right: 0;
-  bottom:0;
-  border-radius: 10px;
-  width: 100%; /* Full width */
-  height: 70%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: white; /* Fallback color */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-}
 
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0} 
-  to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
 
 </style>

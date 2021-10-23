@@ -1,0 +1,157 @@
+@import '../variables.scss';
+#produce-detail{
+
+    .button{
+        background-color: var(--c);
+    }
+    #produce-detail-tab-section{
+        height: 13.7em;
+
+    }
+    .caption{
+    
+        color: $inactive-color;
+        font-weight: normal;
+    }
+
+    .button{
+        margin-top: 0.8em;
+    }
+
+    section{
+        width: 70%;
+    }
+
+    .tabs{
+        .tabs-header{
+            display: flex;
+            justify-content: space-between;
+
+            li{
+                color: $inactive-color;
+                font-size: smaller;
+                font-weight: 600;
+                cursor: pointer;
+
+
+            }
+
+            .tab_selected{
+                color: $primary-color;
+                &::after{
+                    display: block;
+                    content: '';
+                    height: 2.5px;
+                    color: $primary-color;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    width: 100vw;
+    main{
+        display: flex;
+        // justify-content: space-between;
+        padding: 3em 3em;
+        flex-direction: row;
+    }
+    // #produce-detail-images{
+    //     flex:2;
+    // }
+    #produce-detail-content{
+       width: 100%;
+    }
+    #produce-detail-main-image{
+        img{
+            width: 35em;
+            height: 20em;
+            border-radius: 10px;
+        }
+
+    }
+    #produce-detail-image-select{
+        .produce-detail-image-caption{
+            display: flex;
+            justify-content: space-between;
+            justify-self: center;
+            flex-wrap: nowrap;
+            img{
+                cursor: pointer;
+                width: 10em;
+                height: 6.5em;
+                border-radius: 10px;
+
+                &.active{
+                    border: 2.5px solid $primary-color;
+                }
+            }
+            
+        }
+    }
+
+    #produce-detail-content{
+        padding-left: 4em;
+        #produce-detail-product{
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            #product-details-product-svg-name{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+
+                img{
+                    height: 2.5em;
+                    width: 2.5em;
+                    margin-right: 0.4em;
+                }
+            }
+            .link{
+                margin-left: auto;
+            }
+        }
+        
+    }
+}
+
+
+#Details{
+    padding: 0.4em 0.4em;
+     div{
+         h5{
+            padding: 0.4em 0;
+            font-weight: normal;
+         }
+        span{
+            font-weight: 600;
+            color: $primary-color;
+        }
+    }
+}
+
+
+
+.caption-text{
+    display: block;
+}
+#produce-detail-farm-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{
+        height: 2.5em;
+        width: 2.5em;
+        border-radius: 50%;
+    }
+}
+
+#produce-detail-bid{
+    display: flex;
+    justify-content: space-between;
+
+}

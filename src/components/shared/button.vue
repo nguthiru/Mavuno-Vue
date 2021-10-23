@@ -1,6 +1,6 @@
 <template>
 
-<div class="button">
+<div class="button" :style="buttonStyle">
     <slot>
     </slot>
     
@@ -10,7 +10,15 @@
 
 <script>
 export default {
-    props: ['text'],
+    props: ['color'],
+    computed:{
+        buttonStyle(){
+            return{
+                'background-color': this.color,
+            }
+        }
+    },
+    
     name: 'Button',
 }
 </script>

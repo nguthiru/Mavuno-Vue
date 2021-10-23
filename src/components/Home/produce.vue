@@ -1,6 +1,6 @@
 <template>
 
-<Modal v-if="showModal" :data="activeModalData"/>
+<Modal v-if="showModal" :data="activeModalData" @CLOSE_MODAL="close_modal"/>
 
 <SearchBar />
 
@@ -43,18 +43,17 @@ export default {
 
             ],
             filter: [
-              'All','Onions','Potatoes','Cabbages','Peas','Pepper'  
+              'All','Onions','Potatoes','Cabbages','Peas','Pepper','Beans'
             ],
             showModal:false,
             activeModalData: null
         }
     },
     methods:{
-      produceDetail(item){
-        this.activeModalData = item;
-        this.showModal = true;
-
-      },
+      
+      close_modal(){
+        this.showModal = false;
+      }
       
     },
 

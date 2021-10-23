@@ -1,0 +1,175 @@
+#cart-details h5 {
+  padding: 1em 0;
+  font-weight: 500;
+}
+#cart-details h5 span {
+  font-weight: 600;
+}
+
+#cart {
+  padding: 1.5em 0;
+}
+#cart .cart-card-container {
+  margin: 0.8em 0;
+}
+#cart .cart-card-container .cart-card {
+  margin: 0.2em 0;
+  display: flex;
+  align-items: center;
+}
+#cart .cart-card-container .cart-card img {
+  width: 5em;
+  height: 4.6em;
+  border-radius: 10px;
+}
+#cart .cart-card-container .cart-card .cart-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0 0.6em;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-name {
+  font-size: 0.8em;
+  font-weight: 600;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-shop-details {
+  font-size: 0.6em;
+  font-weight: 400;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-shop-details span {
+  color: #5a5a5a;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-price {
+  font-weight: 600;
+  font-size: 0.8em;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-price span {
+  color: #5a5a5a;
+  font-weight: 500;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-quantity-remove {
+  display: flex;
+  justify-content: space-between;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-quantity-remove .quantity-container {
+  display: flex;
+  align-items: center;
+  color: #5a5a5a;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-quantity-remove .quantity-container i {
+  cursor: pointer;
+}
+#cart .cart-card-container .cart-card .cart-card-details .cart-card-quantity-remove .quantity-container .quantity-number {
+  padding: 0 0.8em;
+}
+#cart .cart-card-container .cart-card .icon-button {
+  margin-left: auto;
+}
+
+.modal {
+  /* display: none; Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  width: 100%;
+  /* Full width */
+  height: 85%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: white;
+  /* Fallback color */
+  -webkit-animation-name: fadeIn;
+  /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  display: flex;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=cart.css.map */

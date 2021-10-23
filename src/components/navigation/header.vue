@@ -1,5 +1,6 @@
 <template>
 <div id="header">
+    <img src="../../assets/logo.png" alt="logo">
     <!-- <div id="login-cart">
         <div id="cart">
              <img src = '../../assets/icons/cart2.svg' class='icon'>

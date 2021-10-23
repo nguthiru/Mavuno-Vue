@@ -2,15 +2,18 @@
 @import './Home/searchbar.scss';
 @import './Home/filter.scss';
 @import './bids.scss';
+@import './cart.scss';
+@import './Home/produce_detail.scss';
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    
     background-color: $background-color;
     padding: 0 0.8em;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Poppins',sans-serif;
     color: $black-text;
     
 
@@ -25,10 +28,9 @@ body{
 }
 a{
     text-decoration: none;
-    color: $primary-color;
+    color: inherit;
 
-    font-weight: 600;
-    font-size: 0.9em;
+    // 
 }
 h3{
     font-family: 'Poppins', sans-serif;
@@ -57,7 +59,39 @@ ul{
     list-style: none;
 
 }
+.icon-button{
+    background-color: white;
+    color:$primary-color;
+    border-radius: 10px;
+    height: 2em;
+    width: 2em;
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
 
+    i{
+        font-size: 0.6em;
+    }
+
+    &:hover{
+        background-color: $darker-primary;
+        color: white;
+    }
+    
+}
+
+
+.delete{
+    color: $red-color;
+
+    &:hover{
+        background-color: $red-color;
+        color:white;
+    }
+}
 .badge{
     text-align: center;
     position: absolute;
@@ -90,10 +124,25 @@ ul{
     width: 1.5em;
 }
 .price{
-    color: $primary-color;
-    font-weight: bold;
-
+    // color: $primary-color;
+    font-weight: 600;
     
+    &::after{
+        content: 'sh';
+        color: inherit;
+        font-size: small;
+    }
+}
+.inactive{
+    color: $inactive-color;
+}
+
+.primary-color{
+    color: $primary-color;
+}
+.farm{
+    font-size: smaller;
+    font-weight: 600;
 }
 .accent-text{
     color:$accent-color;
@@ -106,20 +155,17 @@ ul{
 
     min-height: 5vh;
     margin-left: auto;
-    grid-column-start: 1;
-    grid-column-end: span 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    // justify-content: space-between;
+    display: flex;
+    // justify-: space-between;
 
-    // img{
-    //     height: 1.6em;
-    //     width: 5em;
+    img{
+        height: 1.6em;
+        width: 5em;
     
 
         
 
-    // }
+    }
     
 
     #login-cart{
@@ -238,6 +284,8 @@ ul{
     
     }
     #navigation{
+        font-weight: 600;
+        font-size: 0.9em;
         margin: auto 0;
         display: flex;
         // flex: 2;
@@ -253,6 +301,8 @@ ul{
     #refer{
         margin-top: auto;
         .side-links{
+            font-weight: 600;
+            font-size: 0.9em;
             color: $accent-color;
     
         }
@@ -276,6 +326,8 @@ main{
 
 
     #links{
+        font-weight: 600;
+        font-size: 0.9em;
         align-self: flex-start;
         margin: 0 auto;
 
@@ -336,6 +388,11 @@ main{
         display: none;
     }
     flex-direction: column;
+
+    .summary-section-title{
+        font-weight: 600;
+        color: $inactive-color;
+    }
     #header{
         display: flex;
         align-items: center;
@@ -404,13 +461,73 @@ main{
         
         
     }
-
-    #bids{
+    .summary-content{
         display: flex;
         flex-direction: column;
-        align-content: space-between;
+        justify-content: space-between;
+        height: 100%;
+        
+
+    }
+
+    .tabs-header{
         margin-top: 1em;
+
+        display: flex;
+        justify-content: space-between;
+        li{
+            cursor: pointer;
+            color: $inactive-color;
+            font-weight: 600;
+            transition: all 0.6s ease-in-out;
+            &:hover{
+                color: $darker-primary;
+                transition: all 0.6s ease-in-out;
+
+
+                &::after{
+                    
+                        display: block;
+        
+                        content: '';
+                        height:1.2px;
+                        border-radius: 10px;
+                        width: inherit;
+                        background-color: $darker-primary;
+                   
+
+                }
+            }
+            
+        }
+        .tab_selected{
+            color: $primary-color;
+            &::after{
+                display: block;
+
+                content: '';
+                height:2.4px;
+                border-radius: 10px;
+                width: inherit;
+                background-color: $primary-color;
+            }
+
+            
+        }
+
+        
+
+    }
+
+    #bids{
+        
+        h4{
+            font-weight: bold;
+        }
+
         .bid-card{
+
+            
             cursor: pointer;
             // display: flex;
             // justify-content: space-around;
@@ -420,7 +537,7 @@ main{
             height: 3em;
             border-radius: 0.6em;
             padding: 0.2em 0.4em;
-            margin: 0.6em 0em;
+            margin: 1em 0em;
 
             #bid-card-image-farm-name{
                 display: flex;
@@ -452,6 +569,9 @@ main{
                         align-self: flex-start;
                     }
                 }
+                .bid-card-status{
+                    font-weight: 600;
+                }
     
             }
     
@@ -461,8 +581,8 @@ main{
 
     
     .Pending{
-        background-color: rgba($color: #CD8E48, $alpha: 0.05);
-        color: $accent-color;
+        // background-color: rgba($color: $accent-color, $alpha: 0.05);
+        color: $inactive-color;
 
         &:hover{
             background-color: rgba($color: #CD8E48, $alpha: 0.4);
@@ -473,7 +593,7 @@ main{
         }
     }
     .Accepted{
-        background-color: rgba($color: $primary-color , $alpha: 0.05);
+        // background-color: rgba($color: $primary-color , $alpha: 0.05);
         color: $primary-color;
 
         &:hover{
@@ -486,7 +606,7 @@ main{
         }
     }
     .Rejected{
-        background-color: rgba($color: $red-color , $alpha: 0.02);
+        // background-color: rgba($color: $red-color , $alpha: 0.02);
         color: $red-color;
 
         &:hover{
@@ -500,6 +620,7 @@ main{
 
 
 }
+
 .produce-card{
     width: 11em;
     height:18em;
@@ -522,9 +643,6 @@ main{
         width: 11em;
         border-radius: 10%;
     }
-    small{
-        font-size: 0.6em;
-    }
     .card-details{
         padding: 0 0.6em;
         grid-row-start: 2;
@@ -534,6 +652,7 @@ main{
     }
 
 }
+
 
 .sub-content{
     padding-right: 3%;
@@ -576,7 +695,12 @@ main{
                     margin-right: 0.3em;
                 }
                 font-size: 0.9em;
-                color: $accent-color
+                color: $primary-color;
+
+                .location-name{
+                    padding-left: 0.3em;
+
+                }
             }
 
         }
@@ -588,9 +712,7 @@ main{
             h4{
                 padding: 0.1em 0;   
             }
-            #farm{
-                font-weight: 600;
-            }
+            
             #weight{
                 font-weight: 500;
             }
@@ -616,7 +738,7 @@ main{
 .description{
     font-weight: normal;
     font-size: 0.8em;
-    color: grey;
+    color: $inactive-color;
     display: block;/* or inline-block */
     text-overflow: ellipsis;
     word-wrap: break-word;
@@ -628,62 +750,75 @@ main{
 #farm-items{
     column-gap: 10em;
     
-    .produce-card{
-        #agrovet-name{
-            color: $accent-color;
-        }
+    // .produce-card{
+    //     #agrovet-name{
+    //         color: $accent-color;
+    //     }
     .card-details{
         display: flex;
         flex-direction: column;
+        font-size: smaller;
+        justify-content: space-around;
+
 
     }
-    #product-details{
-        flex:3;
+    .item-card-add-to-cart{
+        display: flex;
+        color: $primary-color;
+        align-self: center;
+        cursor: pointer;
+        h6{
+            margin: 0 0.4em;
+        }
+
+        &:hover{
+            color:$darker-primary;
+        }
     }
 
-    .price-card{
-        flex:2;
-        margin-top: auto;
-        align-items: center;
-    }
+    // .price-card{
+    //     flex:2;
+    //     margin-top: auto;
+    //     align-items: center;
+    // }
     
-    }
+    
 
   
 }
 
 
-.intro-card{
-      display: flex;
-      justify-content: space-between;
-      position: relative;
+// .intro-card{
+//       display: flex;
+//       justify-content: space-between;
+//       position: relative;
     
-      border-radius: 10px;
-      margin-top: 0.6em;
-      align-items: center;
-      background-color: rgba($color: $primary-color , $alpha: 0.4);
+//       border-radius: 10px;
+//       margin-top: 0.6em;
+//       align-items: center;
+//       background-color: rgba($color: $primary-color , $alpha: 0.4);
 
-      img{
-          height: 2em;
-          width: 6em;
-          margin-left: 1.2em;
-          margin-top: 1.1em;
-          margin-bottom: 1.1em;
-      }
-      .intro-text{
-          margin: 0 auto;
-      }
-      .intro-image{
-          position:absolute;
-          right: 1.2em;
-          bottom: -1.2em;
-          img{
-              height:6em;
-              width: 6em;
-          }
+//       img{
+//           height: 2em;
+//           width: 6em;
+//           margin-left: 1.2em;
+//           margin-top: 1.1em;
+//           margin-bottom: 1.1em;
+//       }
+//       .intro-text{
+//           margin: 0 auto;
+//       }
+//       .intro-image{
+//           position:absolute;
+//           right: 1.2em;
+//           bottom: -1.2em;
+//           img{
+//               height:6em;
+//               width: 6em;
+//           }
         
-      }
-}
+//       }
+// }
 
 
 #auth{
@@ -824,6 +959,40 @@ main{
         img{
             opacity: 0.2;
         }
+
+    }
+}
+
+
+.modal-body{
+    width:100%;
+    display: flex;
+    align-items: center;
+
+    .modal-image-body{
+        .main-modal-image{
+            margin: 2em 0;
+            height: 25em;
+            width: 40em;
+            border-radius: 10px;
+        }
+        #modal-image-options{
+            display: flex;
+            justify-content: space-around;
+            .caption-modal-image{
+                height: 6em;
+                width: 12em;
+                
+
+                border-radius: 10px;
+
+                &.active{
+                    border: 3px solid $primary-color;
+                }
+            }
+
+        }
+        
 
     }
 }
