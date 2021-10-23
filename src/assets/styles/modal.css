@@ -1,0 +1,107 @@
+.modal {
+  position: fixed;
+  width: 30%;
+  height: 60%;
+  z-index: 1;
+  margin: 0 auto;
+  top: 20%;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: white;
+  /* Fallback color */
+  -webkit-animation-name: fadeIn;
+  /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+.modal h6 {
+  color: #5a5a5a;
+  font-weight: normal;
+}
+.modal h6 span {
+  font-weight: 600;
+}
+.modal .button h6 {
+  color: white;
+}
+.modal .modal-form label {
+  font-weight: 600;
+  font-size: smaller;
+}
+.modal .modal-form input {
+  width: 100%;
+  margin: 1em 0;
+  border: none;
+  border-bottom: 1.5px solid #59914C;
+  outline: none;
+  padding: 0 0.2em;
+}
+
+/* The Close Button */
+.i {
+  margin-left: auto;
+  color: #5a5a5a;
+  float: right;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  width: 100%;
+  text-align: right;
+}
+.modal-header #close-modal {
+  cursor: pointer;
+}
+.modal-header #close-modal:hover {
+  color: #44743b;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=modal.css.map */

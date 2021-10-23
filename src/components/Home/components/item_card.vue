@@ -1,4 +1,5 @@
 <template>
+<router-link :to="link">
 <div class="produce-card" :id="data.id">
     <img :src="data.image[0].image">
     <section class="card-details">
@@ -12,7 +13,7 @@
             <h4 class="price">{{data.price}}</h4>
         </div>
 
-        <div class="item-card-add-to-cart">
+        <div class="item-card-add-to-cart" @click="handleAddCart">
             <i class= "fa fa-shopping-cart"></i>
             <h6> Add To Cart</h6>
             
@@ -21,6 +22,7 @@
 
 
 </div>
+</router-link>
 </template>
 
 <script>
@@ -28,6 +30,11 @@ export default {
     name: 'item-card',
     components:{},
     props:['data'],
+    data(){
+        return {
+        link:`/home/items/${this.$props.data.id}`
+        }
+    },
 
 
     methods: {

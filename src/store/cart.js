@@ -41,9 +41,8 @@ export default {
             }
         },
         async addToCart({dispatch},item){
-            const postData = {item_id:item.id};
+            const postData = {item_id:item.id,quantity:item.quantity};
             const response = await base.post('customers/cart/',postData);
-            console.log(response);
             if(response.status<=210){
                 dispatch("get_cart_items");
             }

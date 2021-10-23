@@ -1,9 +1,15 @@
 @import '../variables.scss';
+
+.detail-container{
+    display: grid;
+    grid-template-rows: 75vh 25vh;
+}
+
 #produce-detail{
 
-    .button{
-        background-color: var(--c);
-    }
+    grid-row: 0 / 2;
+
+    
     #produce-detail-tab-section{
         height: 13.7em;
 
@@ -14,9 +20,9 @@
         font-weight: normal;
     }
 
-    .button{
-        margin-top: 0.8em;
-    }
+    // .button{
+    //     margin-top: 0.8em;
+    // }
 
     section{
         width: 70%;
@@ -50,16 +56,18 @@
     }
 
     width: 100vw;
-    main{
+    .produce-item-detail-view{
         display: flex;
         // justify-content: space-between;
         padding: 3em 3em;
         flex-direction: row;
     }
-    // #produce-detail-images{
-    //     flex:2;
-    // }
-    #produce-detail-content{
+    #produce-detail-images{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .detail-view-content {
        width: 100%;
     }
     #produce-detail-main-image{
@@ -90,8 +98,12 @@
         }
     }
 
-    #produce-detail-content{
+    .detail-view-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding-left: 4em;
+        
         #produce-detail-product{
 
             width: 100%;
@@ -139,7 +151,7 @@
 .caption-text{
     display: block;
 }
-#produce-detail-farm-section{
+.detail-owner{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -153,5 +165,38 @@
 #produce-detail-bid{
     display: flex;
     justify-content: space-between;
+
+}
+
+.quantity-button{
+    display: flex;
+    align-items: center;
+
+    .button{
+        margin: 0 0.4em;
+        align-self: center;
+        width: 100%;
+    }
+}
+.quantity-add-cart{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+
+    h6{
+        padding:0 0.4em;
+        font-weight: normal;
+    }
+}
+.cart-operation{
+    cursor: pointer;
+    
+    font-size: larger;
+    font-weight: normal;
+    color: $inactive-color;
+    padding: 0.4em 0.4em
+    
 
 }

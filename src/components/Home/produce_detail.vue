@@ -1,28 +1,7 @@
-<template>
-  <div id="produce-detail">
-    <div id="produce-detail-nav">
-      <HeaderCustom />
-    </div>
-    <main>
-      <div id="produce-detail-images">
-        <div id="produce-detail-main-image">
-          <img :src="data.produce_images[selected_index].image" />
-        </div>
-
-        <div id="produce-detail-image-select">
-          <div class="produce-detail-image-caption">
-            <img
-              v-for="(image, index) in data.produce_images"
-              :style= "activeColor(index)"
-              :class="selected_index == index ? 'active' : ''"
-              :key="image.image"
-              :src="image.image"
-              @click="changeImage(index)"
-            />
-          </div>
-        </div>
-      </div>
-      <div id="produce-detail-content">
+<template >
+<Modal v-show="showModal" @closeModal="showModal=false" :bid_data="data" @modalButtonClick="placeBid"/>
+<DetailView :images="data.produce_images" :color="data.product.colorCode">
+  <div id="produce-detail-content" class="detail-view-content" >
         <div id="produce-detail-product">
           <div id="product-details-product-svg-name">
             <img :src="data.product.svg_icon" />
@@ -56,7 +35,7 @@
               <Tab title="History"> History </Tab>
             </TabsWrapper>
           </div>
-          <div id="produce-detail-farm-section">
+          <div id="produce-detail-farm-section" class="detail-owner">
             <div class="produce-detail-caption-text">
               <h6 class="caption">Farm</h6>
               <img :src="data.farm.image" />
@@ -86,35 +65,45 @@
               </h3>
             </div>
           </div>
-          <Button :color="data.product.colorCode">
+          <Button :color="data.product.colorCode" @click="showModal=true">
             <h6>Place Bid</h6>
           </Button>
         </section>
       </div>
-    </main>
-  </div>
+
+</DetailView>
+
 </template>
 
 <script>
 import base from "../../main";
-import HeaderCustom from "../navigation/header.vue";
 import moment from "moment";
 import TabsWrapper from "../shared/Tabs/TabsWrapper.vue";
 import Tab from "../shared/Tabs/tab.vue";
 import Button from "../shared/button.vue";
+import DetailView from '../Home/components/detail_view.vue';
+import Modal from '../modal.vue';
 
 export default {
-  components: { HeaderCustom, TabsWrapper, Tab, Button },
+  components: { DetailView, TabsWrapper, Tab, Button, Modal },
   name: "produce-detail",
   data() {
     return {
       data: {},
       selected_index: 0,
+      showModal:false
     };
   },
   methods: {
     changeImage(index) {
       this.selected_index = index;
+    },
+    async placeBid(item){
+      item['produce'] = this.data.id;
+      await this.$store.dispatch('bids/create_bid',item);
+      this.showModal = false;
+      
+
     },
     activeColor(index){
         if(index===this.selected_index){
@@ -142,7 +131,6 @@ export default {
       `customers/produce/${this.$route.params.id}/`
     );
     this.data = response.data;
-    console.log(this.data.produce_images[0]);
   },
 };
 </script>

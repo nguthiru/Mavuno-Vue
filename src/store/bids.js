@@ -23,8 +23,6 @@ export default{
             try{
                 const data = await base.get('customers/bids/');
                 commit("SET_BIDS",data.data);
-
-
             }
             catch(e){
                 console.log(e);
@@ -35,6 +33,15 @@ export default{
         async filter_bids(item){
             console.log(item);
     
+        },
+        async create_bid({dispatch},item){
+            const response = await base.post('customers/bids/',item)
+            if(response.status<=210){
+                dispatch("get_bids")
+            }
+            else{
+                console.log(response.data)
+            }
         }
 
     },
