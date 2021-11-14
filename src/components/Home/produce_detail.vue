@@ -1,5 +1,28 @@
 <template >
-<Modal v-show="showModal" @closeModal="showModal=false" :bid_data="data" @modalButtonClick="placeBid"/>
+<Modal v-show="showModal" @closeModal="showModal=false" @modalButtonClick="placeBid">
+  <template v-slot:title>
+    <h3>Place a bid</h3>
+        <h6>You must bid at least: <span class="price">{{data.starting_price}}</span></h6>
+  </template>
+  <template v-slot:body>
+    <div id="modal-form-container">
+        <div class="modal-form">
+          <label>Price<small>(per kg)</small></label>
+          <input type="number" v-model="price" :style="colorStyle" />
+        </div>
+        <div class="modal-form">
+          <label>Quantity<small>(kgs)</small> </label>
+          <input type="number" v-model="quantity" :style="colorStyle"/>
+        </div>
+       
+      </div>
+      <div id="modal-bid-details">
+        <h6>Total Amount: <span class="price"> {{totalAmount}}</span></h6>
+        <h6>Mavuno Levy: <span class="price">{{levy}}</span></h6>
+      </div>
+      <Button :style="buttonStyle" @click="placeBid({'weight':this.quantity,'price':this.price})"> <h6> Place Bid </h6></Button>
+  </template>
+</Modal>
 <DetailView :images="data.produce_images" :color="data.product.colorCode">
   <div id="produce-detail-content" class="detail-view-content" >
         <div id="produce-detail-product">
@@ -91,6 +114,8 @@ export default {
     return {
       data: {},
       selected_index: 0,
+      price: 0,
+      quantity: 0,
       showModal:false
     };
   },
@@ -115,6 +140,12 @@ export default {
     }
   },
   computed: {
+    totalAmount(){
+      return this.price * this.quantity
+    },
+    levy(){
+      return this.totalAmount/1000;
+    },
     format_date() {
       return moment(this.data.date_added).format("Do MMMM YYYY");
     },
@@ -123,6 +154,11 @@ export default {
            'color':this.data.product.colorCode
         }
     },
+    buttonStyle(){
+       return {
+        'background-color':this.data.product.colorCode,
+      }
+    }
     
     
   },
@@ -131,6 +167,7 @@ export default {
       `customers/produce/${this.$route.params.id}/`
     );
     this.data = response.data;
+    this.price = response.data.starting_price;
   },
 };
 </script>

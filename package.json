@@ -11,6 +11,7 @@
     "@apollo/client": "^3.4.11",
     "@vue/apollo-option": "^4.0.0-alpha.14",
     "axios": "^0.23.0",
+    "chart.js": "^3.6.0",
     "core-js": "^3.6.5",
     "eslint-plugin-graphql": "^4.0.0",
     "moment": "^2.29.1",

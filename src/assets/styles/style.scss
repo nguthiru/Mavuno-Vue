@@ -138,7 +138,7 @@ ul{
     }
 }
 .inactive{
-    color: $inactive-color;
+    color: $inactive;
 }
 
 .primary-color{
@@ -228,7 +228,7 @@ ul{
             flex-direction: column;
             justify-content: space-between;
             #user-data-email{
-                color:$inactive-color;
+                color:$inactive;
                 font-weight: normal;
             }
             #usertype{
@@ -243,7 +243,7 @@ ul{
         align-items: center;
         display: flex;
         text-decoration: none;
-        color: $inactive-color;
+        color: $inactive;
         transition: all 0.6s ease-in-out;
 
         i{
@@ -318,6 +318,8 @@ ul{
 
 .caption{
     color: $caption-color;
+    font-size: smaller;
+
 }
 
 main{
@@ -348,7 +350,7 @@ main{
                     text-decoration: none;
                     cursor: pointer;
                     margin: 0 1.5em;
-                    color: $inactive-color;
+                    color: $inactive;
                     font-weight: 500;
                     transition: all 0.6s ease-in-out;
                     &.router-link-active{
@@ -398,7 +400,7 @@ main{
 
     .summary-section-title{
         font-weight: 600;
-        color: $inactive-color;
+        color: $inactive;
     }
     #header{
         display: flex;
@@ -426,7 +428,7 @@ main{
         h6{
             margin: 0.6em 0;
             font-weight: normal;
-            color: $inactive-color;
+            color: $inactive;
         }
 
     }
@@ -463,7 +465,7 @@ main{
         h5{
             font-weight: normal;
             font-size: 0.7em;
-            color: $inactive-color;
+            color: $inactive;
         }
         
         
@@ -484,7 +486,7 @@ main{
         justify-content: space-between;
         li{
             cursor: pointer;
-            color: $inactive-color;
+            color: $inactive;
             font-weight: 600;
             transition: all 0.6s ease-in-out;
             &:hover{
@@ -590,7 +592,7 @@ main{
     
     .Pending{
         // background-color: rgba($color: $accent-color, $alpha: 0.05);
-        color: $inactive-color;
+        color: $inactive;
 
         &:hover{
             background-color: rgba($color: #CD8E48, $alpha: 0.4);
@@ -729,7 +731,7 @@ main{
         //     display: flex;
         //     align-items: center;
         //     margin: 0 auto;
-        //     color: $inactive-color
+        //     color: $inactive
         //     i{
         //         font-size: 0.9em;
         //     }
@@ -742,11 +744,16 @@ main{
         
 
     }
-
+.flex-container{
+    display: flex;
+}
+.space-btn{
+    justify-content: space-between;
+}
 .description{
     font-weight: normal;
     font-size: 0.8em;
-    color: $inactive-color;
+    color: $inactive;
     display: block;/* or inline-block */
     text-overflow: ellipsis;
     word-wrap: break-word;
@@ -927,7 +934,7 @@ main{
         h5{
             font-weight: 600;
             margin-bottom: 0.6em;
-            color: $inactive-color;
+            color: $inactive;
 
             a{
                 cursor: pointer;
@@ -971,4 +978,357 @@ main{
     }
 }
 
+.sub-title{
+    font-size: 0.6em;
+    color: $inactive-color
+}
+#wallet{
+    display: flex;
+    flex-direction: row;
+    #transactions{
+        width: 100%;
+    }
 
+    #spending-chart{
+        // background-color: white;
+        border-radius: 10px;
+        display: block;
+        // width: 40%;
+        height: 13em;
+    }
+
+    .transaction-card{
+        // background-color: white;
+        border-radius: 10px;
+        margin-bottom: 0.6em;
+        padding: 0.2em 0.4em;
+        display: flex;
+        align-items: start;
+        width: 100%;
+        img{
+            width: 2.5em;
+            height: 2.5em;
+            border-radius: 50%;
+            margin-right: 1em;
+        }
+        .transaction-card-details{
+            h5{
+                font-size: smaller;
+                font-weight: 600;
+            }
+            p{
+                font-size: 0.6em;
+                color: $inactive;
+            }
+        }
+        .transaction-amount{
+            margin-left: auto;
+            align-self: center;
+        }
+        .withdrawal{
+            color: $red-color;
+            &::before{
+                content:"-";
+            }
+
+        }
+        .deposit{
+            color: $primary-color;
+            &::before{
+                content:"+";
+            }
+        }
+        
+        
+    }
+
+}
+
+#wallet-card{
+    background-color: rgba($color: $primary-color , $alpha: 1);
+    width: 24em;
+    height:12em;
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+    background-clip: padding-box;
+    border: solid 4px transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.8em 0.8em;
+    position: relative;
+
+    img{
+        position: absolute;
+        right: 0.8em;
+        top:0;
+        width: 5em;
+        height: 1.8em;
+    }
+
+    .text-group-container{
+        p{
+            font-weight: normal;
+            font-size: small;
+        }
+        .card-owner{
+            
+            font-weight: 500;
+        }
+       
+        
+
+    }
+    .wallet-balance{
+        font-size: larger;
+    }
+    .card-id{
+        font-size: small;
+        color: $inactive;
+    }
+}
+.payment-option{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height:1.5em;
+        width: 1.5em;
+    }
+}
+.deposit-options{
+    display: flex;
+    justify-content: space-between;
+
+}
+.credit-card-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    label{
+        font-weight: 600;
+        font-size: smaller;
+        margin: 0.4em 0;
+    }
+    i{
+        position: absolute;
+        color:red;
+    }
+}
+
+.side-form{
+    justify-content: space-between;
+}
+.deposit-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    input,select{
+        display: inline-block;
+        width: 100%;
+        height: 2.4em;
+        border: solid 0.2px grey;
+        border-radius: 5px;
+        padding: 0 0.4em;
+        outline: none;
+        &:focus{
+            border: 2px solid $black-text;
+        }
+        
+    }
+
+    .side-form{
+        display: flex;
+        input,select{
+            width: 100%;
+        }
+    }
+}
+.wallet-operations{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.6em 0;
+}
+
+.wallet-operation{
+    cursor: pointer;
+    text-align: center;
+    img{
+        height: 1.7em;
+        width: 1.7em;
+    }
+    u{
+        color: $primary-color;
+        height: 2px;
+    }
+    h6{
+        font-weight: 500;
+        color: $primary-color;
+    }
+}
+
+.wallet-subscription{
+    height: 12.7em;
+    width: 12.5em;
+    background-color: white;
+    padding: 0.6em;
+    border-radius: 10px;
+    margin-right: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .subscription-heading{
+        font-weight: 600;
+        color: initial;
+    }
+    p{
+        font-size: small;
+        color: $inactive;
+    }
+}
+.amount-unsubscribe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div{
+        width: 2em;
+        height: 2em;
+        border: 1px solid $red-color;
+        border-radius: 50%;
+        text-align: center;
+        color: $red-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    i{
+        color: $red-color;
+
+    }
+    p{
+        color: $inactive-color;
+        font-weight: 500;
+    }
+    u{
+        color: $red-color;
+    }
+    .unsubscribe{
+        cursor: pointer;
+        color: $red-color;
+    }
+}
+#wallet-subscriptions{
+    display: flex;
+    align-items: center;
+}
+.add-subscription{
+    cursor: pointer;
+    margin-left: 0.6em;
+    color: $primary-color;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i{
+        font-size: larger;
+    }
+}
+
+#wallet-invoices{
+    display: flex;
+}
+
+.wallet-document{
+    height: 7em;
+    width: 12.5em;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.wallet-receipt{
+    background-color: rgba($color: $primary-color , $alpha: 0.4);
+    color: $primary-color;
+}
+
+.transaction-section{
+    margin: 1.2em 0;
+}
+
+.transaction-section-content{
+    margin: 0.6em 0;
+}
+
+#recent-transactions{
+    margin: 0.6em 0;
+}
+#wallet-transaction{
+    .caption{
+        color: $inactive-color;
+    }
+}
+.chart-section{
+    display: flex;
+}
+
+.wallet-summary{
+    display: flex;
+}
+.wallet-usage{
+    background-color: white;
+    border-radius: 10px;
+    height: 10em;
+    width: 8em;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 0.6em;
+    img{
+        height: 2em;
+        width: 2em;
+        border-radius: 5px;
+    }
+    h6{
+        font-weight: 500;
+    }
+    p{
+        font-size: smaller;
+        font-weight: 600;
+    }
+    .wallet-usage-time{
+        font-weight: 500;
+    }
+
+}
+.wallet-usage-price{
+    display: flex;
+    align-items: center;
+    i{
+        display: inline;
+    }
+
+    p{
+        margin-right: 0.6em;
+    }
+}

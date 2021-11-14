@@ -11,7 +11,7 @@
   height: 13.7em;
 }
 #produce-detail .caption {
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-weight: normal;
 }
 #produce-detail section {
@@ -22,7 +22,7 @@
   justify-content: space-between;
 }
 #produce-detail .tabs .tabs-header li {
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-size: smaller;
   font-weight: 600;
   cursor: pointer;
@@ -156,6 +156,6 @@
   cursor: pointer;
   font-size: larger;
   font-weight: normal;
-  color: #5a5a5a;
+  color: #4E5C4B;
   padding: 0.4em 0.4em;
 }/*# sourceMappingURL=produce_detail.css.map */

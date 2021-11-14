@@ -16,7 +16,7 @@
     }
     .caption{
     
-        color: $inactive-color;
+        color: $inactive;
         font-weight: normal;
     }
 
@@ -34,7 +34,7 @@
             justify-content: space-between;
 
             li{
-                color: $inactive-color;
+                color: $inactive;
                 font-size: smaller;
                 font-weight: 600;
                 cursor: pointer;
@@ -195,7 +195,7 @@
     
     font-size: larger;
     font-weight: normal;
-    color: $inactive-color;
+    color: $inactive;
     padding: 0.4em 0.4em
     
 

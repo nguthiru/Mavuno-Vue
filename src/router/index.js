@@ -7,6 +7,7 @@ import Produce from '../components/Home/produce.vue';
 import Farm_Items from '../components/Home/farm_items.vue';
 import ProduceDetail from '../components/Home/produce_detail.vue';
 import ItemDetail from '../components/Home/item_detail.vue';
+import Wallet from '../views/Wallet.vue'
 const routes = [
   {
     path:'',
@@ -68,6 +69,12 @@ const routes = [
     path: '/bids',
     name: 'bids',
     component: Bids
+  },
+  {
+    path: '/wallet',
+    name: 'wallet',
+
+    component: Wallet
   }
 ]
 

@@ -44,7 +44,7 @@
         </router-link>
 
       </div>
-      <div class="side-links">
+      <!-- <div class="side-links">
         <router-link to="/points">
         <i class="fas fa-fire"></i>
 
@@ -52,7 +52,7 @@
           <h5>My Points</h5>
         </router-link>
 
-      </div>
+      </div> -->
       <!-- <div class="side-links">
         <img data="../../assets/icons/settings.svg"  />
         <h5>Settings</h5>

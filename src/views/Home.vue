@@ -11,12 +11,12 @@
         <div class="list-item">
           <li><router-link to="/home/items">Farm Items</router-link></li>
         </div>
-        <div class="list-item">
+        <!-- <div class="list-item">
           <li><router-link to="/home/farms">Farms</router-link></li>
         </div>
         <div class="list-item">
           <li><router-link to="/home/shops">Shops</router-link></li>
-        </div>
+        </div> -->
       </ul>
     </div>
     <router-view />

@@ -60,7 +60,7 @@
 .filter section .filter-area {
   text-align: center;
   width: 6em;
-  color: #5a5a5a;
+  color: #4E5C4B;
   padding: 0.4em;
   transition: all 0.3s ease-in-out;
 }
@@ -252,7 +252,7 @@
   height: 13.7em;
 }
 #produce-detail .caption {
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-weight: normal;
 }
 #produce-detail section {
@@ -263,7 +263,7 @@
   justify-content: space-between;
 }
 #produce-detail .tabs .tabs-header li {
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-size: smaller;
   font-weight: 600;
   cursor: pointer;
@@ -397,7 +397,7 @@
   cursor: pointer;
   font-size: larger;
   font-weight: normal;
-  color: #5a5a5a;
+  color: #4E5C4B;
   padding: 0.4em 0.4em;
 }
 
@@ -634,7 +634,7 @@ ul {
 }
 
 .inactive {
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 
 .primary-color {
@@ -706,7 +706,7 @@ ul {
   justify-content: space-between;
 }
 #sidebar #user-data-image #user-data #user-data-email {
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-weight: normal;
 }
 #sidebar #user-data-image #user-data #usertype {
@@ -717,7 +717,7 @@ ul {
   align-items: center;
   display: flex;
   text-decoration: none;
-  color: #5a5a5a;
+  color: #4E5C4B;
   transition: all 0.6s ease-in-out;
 }
 #sidebar a i {
@@ -770,6 +770,7 @@ ul {
 
 .caption {
   color: #57804f;
+  font-size: smaller;
 }
 
 main {
@@ -798,7 +799,7 @@ main #links ul .list-item li a {
   text-decoration: none;
   cursor: pointer;
   margin: 0 1.5em;
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-weight: 500;
   transition: all 0.6s ease-in-out;
 }
@@ -835,7 +836,7 @@ main #links ul .list-item .active::after {
 }
 #summary .summary-section-title {
   font-weight: 600;
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 #summary #header {
   display: flex;
@@ -861,7 +862,7 @@ main #links ul .list-item .active::after {
 #summary #heading h6 {
   margin: 0.6em 0;
   font-weight: normal;
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 #summary .filter .filter-area {
   justify-content: space-between;
@@ -888,7 +889,7 @@ main #links ul .list-item .active::after {
 #summary #details h5 {
   font-weight: normal;
   font-size: 0.7em;
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 #summary .summary-content {
   display: flex;
@@ -903,7 +904,7 @@ main #links ul .list-item .active::after {
 }
 #summary .tabs-header li {
   cursor: pointer;
-  color: #5a5a5a;
+  color: #4E5C4B;
   font-weight: 600;
   transition: all 0.6s ease-in-out;
 }
@@ -972,7 +973,7 @@ main #links ul .list-item .active::after {
   font-weight: 600;
 }
 #summary .Pending {
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 #summary .Pending:hover {
   background-color: rgba(205, 142, 72, 0.4);
@@ -1073,10 +1074,18 @@ main #links ul .list-item .active::after {
   font-weight: 500;
 }
 
+.flex-container {
+  display: flex;
+}
+
+.space-btn {
+  justify-content: space-between;
+}
+
 .description {
   font-weight: normal;
   font-size: 0.8em;
-  color: #5a5a5a;
+  color: #4E5C4B;
   display: block;
   /* or inline-block */
   text-overflow: ellipsis;
@@ -1201,7 +1210,7 @@ main #links ul .list-item .active::after {
 #auth .auth-section #password-links h5 {
   font-weight: 600;
   margin-bottom: 0.6em;
-  color: #5a5a5a;
+  color: #4E5C4B;
 }
 #auth .auth-section #password-links h5 a {
   cursor: pointer;
@@ -1230,4 +1239,343 @@ main #links ul .list-item .active::after {
 }
 #auth .svg-section img {
   opacity: 0.2;
+}
+
+.sub-title {
+  font-size: 0.6em;
+  color: #5a5a5a;
+}
+
+#wallet {
+  display: flex;
+  flex-direction: row;
+}
+#wallet #transactions {
+  width: 100%;
+}
+#wallet #spending-chart {
+  border-radius: 10px;
+  display: block;
+  height: 13em;
+}
+#wallet .transaction-card {
+  border-radius: 10px;
+  margin-bottom: 0.6em;
+  padding: 0.2em 0.4em;
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+#wallet .transaction-card img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+#wallet .transaction-card .transaction-card-details h5 {
+  font-size: smaller;
+  font-weight: 600;
+}
+#wallet .transaction-card .transaction-card-details p {
+  font-size: 0.6em;
+  color: #4E5C4B;
+}
+#wallet .transaction-card .transaction-amount {
+  margin-left: auto;
+  align-self: center;
+}
+#wallet .transaction-card .withdrawal {
+  color: #c24f4f;
+}
+#wallet .transaction-card .withdrawal::before {
+  content: "-";
+}
+#wallet .transaction-card .deposit {
+  color: #59914C;
+}
+#wallet .transaction-card .deposit::before {
+  content: "+";
+}
+
+#wallet-card {
+  background-color: #59914c;
+  width: 24em;
+  height: 12em;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  background-clip: padding-box;
+  border: solid 4px transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8em 0.8em;
+  position: relative;
+}
+#wallet-card img {
+  position: absolute;
+  right: 0.8em;
+  top: 0;
+  width: 5em;
+  height: 1.8em;
+}
+#wallet-card .text-group-container p {
+  font-weight: normal;
+  font-size: small;
+}
+#wallet-card .text-group-container .card-owner {
+  font-weight: 500;
+}
+#wallet-card .wallet-balance {
+  font-size: larger;
+}
+#wallet-card .card-id {
+  font-size: small;
+  color: #4E5C4B;
+}
+
+.payment-option {
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+  height: 3em;
+  width: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-option img {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.deposit-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.credit-card-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+.form-container label {
+  font-weight: 600;
+  font-size: smaller;
+  margin: 0.4em 0;
+}
+.form-container i {
+  position: absolute;
+  color: red;
+}
+
+.side-form {
+  justify-content: space-between;
+}
+
+.deposit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.deposit-form input, .deposit-form select {
+  display: inline-block;
+  width: 100%;
+  height: 2.4em;
+  border: solid 0.2px grey;
+  border-radius: 5px;
+  padding: 0 0.4em;
+  outline: none;
+}
+.deposit-form input:focus, .deposit-form select:focus {
+  border: 2px solid #1f1f1f;
+}
+.deposit-form .side-form {
+  display: flex;
+}
+.deposit-form .side-form input, .deposit-form .side-form select {
+  width: 100%;
+}
+
+.wallet-operations {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.6em 0;
+}
+
+.wallet-operation {
+  cursor: pointer;
+  text-align: center;
+}
+.wallet-operation img {
+  height: 1.7em;
+  width: 1.7em;
+}
+.wallet-operation u {
+  color: #59914C;
+  height: 2px;
+}
+.wallet-operation h6 {
+  font-weight: 500;
+  color: #59914C;
+}
+
+.wallet-subscription {
+  height: 12.7em;
+  width: 12.5em;
+  background-color: white;
+  padding: 0.6em;
+  border-radius: 10px;
+  margin-right: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wallet-subscription .subscription-heading {
+  font-weight: 600;
+  color: initial;
+}
+.wallet-subscription p {
+  font-size: small;
+  color: #4E5C4B;
+}
+
+.amount-unsubscribe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.amount-unsubscribe div {
+  width: 2em;
+  height: 2em;
+  border: 1px solid #c24f4f;
+  border-radius: 50%;
+  text-align: center;
+  color: #c24f4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.amount-unsubscribe i {
+  color: #c24f4f;
+}
+.amount-unsubscribe p {
+  color: #5a5a5a;
+  font-weight: 500;
+}
+.amount-unsubscribe u {
+  color: #c24f4f;
+}
+.amount-unsubscribe .unsubscribe {
+  cursor: pointer;
+  color: #c24f4f;
+}
+
+#wallet-subscriptions {
+  display: flex;
+  align-items: center;
+}
+
+.add-subscription {
+  cursor: pointer;
+  margin-left: 0.6em;
+  color: #59914C;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-subscription i {
+  font-size: larger;
+}
+
+#wallet-invoices {
+  display: flex;
+}
+
+.wallet-document {
+  height: 7em;
+  width: 12.5em;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wallet-receipt {
+  background-color: rgba(89, 145, 76, 0.4);
+  color: #59914C;
+}
+
+.transaction-section {
+  margin: 1.2em 0;
+}
+
+.transaction-section-content {
+  margin: 0.6em 0;
+}
+
+#recent-transactions {
+  margin: 0.6em 0;
+}
+
+#wallet-transaction .caption {
+  color: #5a5a5a;
+}
+
+.chart-section {
+  display: flex;
+}
+
+.wallet-summary {
+  display: flex;
+}
+
+.wallet-usage {
+  background-color: white;
+  border-radius: 10px;
+  height: 10em;
+  width: 8em;
+  padding: 0.6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 0.6em;
+}
+.wallet-usage img {
+  height: 2em;
+  width: 2em;
+  border-radius: 5px;
+}
+.wallet-usage h6 {
+  font-weight: 500;
+}
+.wallet-usage p {
+  font-size: smaller;
+  font-weight: 600;
+}
+.wallet-usage .wallet-usage-time {
+  font-weight: 500;
+}
+
+.wallet-usage-price {
+  display: flex;
+  align-items: center;
+}
+.wallet-usage-price i {
+  display: inline;
+}
+.wallet-usage-price p {
+  margin-right: 0.6em;
 }/*# sourceMappingURL=style.css.map */
